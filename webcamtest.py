@@ -12,7 +12,7 @@ if ipcam:
     st.success("Địa chỉ IP webcam của bạn là:" +" "+ipcam)
 colors = np.random.uniform(0, 255, size=(100,3))
 run = st.button("Hiển thị webcam")
-_, img = numpy.array(cap)
+_, img = cap.read()
 FRAME_WINDOW.image(img) 
 
 
