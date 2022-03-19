@@ -15,7 +15,9 @@ run = st.button("Hiển thị webcam")
 if run:
     if(ipcam):
         while True:
-            _, img = cap.read()
+            ret , img = cap.read()
+            if ret:
+                assert not isinstance(img,type(None)), 'frame not found'
             height, width,channel = img.shape
             # img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
             # FRAME_WINDOW.image(img) 
