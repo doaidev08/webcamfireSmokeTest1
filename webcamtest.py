@@ -16,7 +16,7 @@ if run:
     if(ipcam):
         while True:
             ret , img = cap.read()
-            assert not isinstance(img,type(None)),
+            assert not isinstance(img,type(None))
             if ret:
                 assert not isinstance(img,type(None)), 'frame not found'
             height, width,channel = img.shape
