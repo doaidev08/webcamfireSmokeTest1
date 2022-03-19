@@ -7,16 +7,12 @@ st.subheader("Mời nhập địa chỉ IP và port Webcam của bạn")
 st.text("Ví dụ: https://192.168.9.102:8080")
 ipcam = st.text_input("")
 ipcamvideo = ipcam + "/video"
-cap = cv2.VideoCapture(ipcamvideo)
+cap = cv2.VideoCapture("https://192.168.9.102:8080/video")
 if ipcam:
     st.success("Địa chỉ IP webcam của bạn là:" +" "+ipcam)
 colors = np.random.uniform(0, 255, size=(100,3))
 run = st.button("Hiển thị webcam")
-
-
-
-
-_, img = cap.read()
+_, img = numpy.array(cap)
 FRAME_WINDOW.image(img) 
 
 
