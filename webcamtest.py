@@ -8,6 +8,7 @@ st.text("Ví dụ: https://192.168.9.102:8080")
 ipcam = st.text_input("")
 ipcamvideo = ipcam + "/video"
 cap = cv2.VideoCapture(ipcamvideo)
+cap = cv2.imdecode(np.formfile(cap,dtype=np.uint8),cv2.IMREAD_UNCHANGED)
 if ipcam:
     st.success("Địa chỉ IP webcam của bạn là:" +" "+ipcam)
 colors = np.random.uniform(0, 255, size=(100,3))
@@ -16,7 +17,6 @@ if run:
     if(ipcam):
         while True:
             ret , img = cap.read()
-            assert not isinstance(img,type(None))
             if ret:
                 assert not isinstance(img,type(None)), 'frame not found'
             height, width,channel = img.shape
