@@ -1,4 +1,4 @@
-# import cv2
+import cv2
 import streamlit as st
 import numpy as np
 st.title("Hiển thị AI webcam của bạn")
