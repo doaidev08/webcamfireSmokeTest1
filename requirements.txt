@@ -1,2 +1,3 @@
 streamlit==1.4.0
 opencv-python-headless
+pillow>=6.2.0
