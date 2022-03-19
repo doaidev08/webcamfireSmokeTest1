@@ -1,5 +1,2 @@
-streamlit
-opencv-contrib-python-headless
+streamlit==1.4.0
 opencv-python-headless
-numpy
-streamlit-drawable-canvas
