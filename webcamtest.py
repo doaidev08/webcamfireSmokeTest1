@@ -16,6 +16,7 @@ if run:
     if(ipcam):
         while True:
             ret , img = cap.read()
+            img = cv2.imdecode(np.fromfile(img, dtype=np.uint8), cv2.IMREAD_UNCHANGED)
             if ret:
                 assert not isinstance(img,type(None)), 'frame not found'
             height, width,channel = img.shape
